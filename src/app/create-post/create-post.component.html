@@ -1,2 +1,5 @@
-<h1> Aqui se tiene para crear un componente </h1>
-<h2> Se hizo un cambio que espera que se guarde :3 </h1>
+<h1> {{content}}</h1>
+
+<textarea [(ngModel)]="texto"></textarea>
+
+<button mat-raised-button color="primary" (click)="showText()">Enviar</button>
