@@ -1,5 +1,35 @@
-<h1> {{content}}</h1>
 
+<!--
 <textarea [(ngModel)]="texto"></textarea>
 
 <button mat-raised-button color="primary" (click)="showText()">Enviar</button>
+<h1> {{content}}</h1>
+--->
+<form (submit)="addPost(postForm)" #postForm= "ngForm">
+  <mat-form-field  appearance="fill">
+    <mat-label>Titulo</mat-label>
+    <input type="text" matInput ngModel title="ngModel" placeholder="Title" name ="title" >
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Summary</mat-label>
+    <input type="text" matInput ngModel summary="summary" placeholder="Summary" name="summary">
+  </mat-form-field>
+   <mat-form-field appearance="fill">
+    <mat-label>Content</mat-label>
+    <textarea type="text" ngModel="content" placeholder="Content"matInput  name="content"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" >Guardar</button>
+</form>
+
+<p *ngIf="posts.length==0">No se ha agregado posts..</p>
+
+<mat-card *ngFor="let i of posts ">
+  <mat-card-title> {{i.title}}</mat-card-title>
+  <mat-card-subtitle> {{i.summary}}</mat-card-subtitle>
+  <mat-card-content>
+    <p>{{i.content}}</p>
+
+  </mat-card-content>
+
+</mat-card>
