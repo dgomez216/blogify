@@ -1,24 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import {NgForm} from '@angular/forms';
-import { Post } from '../models/post.models';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Post } from '../models/post.model';
+
 @Component({
   selector: 'create-post',
   templateUrl: './create-post.component.html',
-  styleUrls: ['./create-post.component.css']
+  styleUrls: ['./create-post.component.css'],
 })
 export class CreatePostComponent implements OnInit {
-  content: string="Hola mundo :3";
-  texto: string="";
-  posts: Post[]= [];
-  constructor() { }
+  content: string = 'Hola a todos';
+  texto: string = '';
+  @Output() createPost = new EventEmitter<Post>();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  showText() {
+    this.content = this.texto;
   }
-  showText(){
-      this.content=this.texto
-  }
-  addPost(form:NgForm){
-    console.log(form.value.title);
-    this.posts.push(form.value);
+
+  addPost(form: NgForm) {
+    if (form.valid) {
+      this.createPost.emit(form.value);
+      form.resetForm();
+    }
   }
 }

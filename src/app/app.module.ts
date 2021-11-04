@@ -1,34 +1,32 @@
-// Librerías de Angular
+// Librerias de angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
-// Componentes del aplicativo :3
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+// Componentes del aplicativo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreatePostComponent } from './create-post/create-post.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//Librerías importadas de Angular Material (para instalarlo: ng add @angular/material )
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
+
+// Componentes de Material
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { PostListComponent } from './post-list/post-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CreatePostComponent
-  ],
+  declarations: [AppComponent, CreatePostComponent, PostListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatTabsModule,
     FormsModule,
+    MatButtonModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
