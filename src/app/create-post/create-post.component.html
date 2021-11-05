@@ -7,13 +7,13 @@
 --->
 <form (submit)="addPost(postForm)" #postForm= "ngForm">
   <mat-form-field  appearance="fill">
-    <mat-label>Titulo</mat-label>
-    <input type="text" matInput ngModel title="ngModel" placeholder="Title" name ="title" >
+    <mat-label>Título</mat-label>
+    <input type="text" matInput ngModel title="ngModel" placeholder="Title" name ="title" required>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Summary</mat-label>
-    <input type="text" matInput ngModel summary="summary" placeholder="Summary" name="summary">
+    <input type="text" matInput ngModel summary="summary" placeholder="Summary" name="summary" required>
   </mat-form-field>
    <mat-form-field appearance="fill">
     <mat-label>Content</mat-label>
