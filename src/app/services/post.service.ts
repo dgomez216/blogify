@@ -1,21 +1,31 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
+
 import { Post } from '../models/post.model';
-import {Subject} from 'rxjs';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
   posts: Post[] = [];
-  postUpdated= new Subject<Post[]>();
+  postUpdated = new Subject<Post[]>();
 
-  constructor() { }
-  addPost(post: Post){
+  constructor(private router: Router) {}
+
+  addPost(post: Post) {
     this.posts.push(post);
-    this.postUpdated.next([...this.posts]);
-    //Genera notificacion a los componentes suscritos a Subject
 
+    // Generar notificacion de actualizacion a los componentes suscritos al Subject
+    this.postUpdated.next([...this.posts]);
+    this.router.navigate(['/']);
   }
-  getPostsUpdateListener(){
-   return this.postUpdated.asObservable;
+
+  getPosts() {
+    return [...this.posts];
+  }
+
+  getPostsUpdateListener() {
+    return this.postUpdated.asObservable();
   }
 }

@@ -1,25 +1,30 @@
-
-<!--
+<!-- <p>{{ content }}</p>
 <textarea [(ngModel)]="texto"></textarea>
+<button mat-raised-button color="primary" (click)="showText()">Guardar</button> -->
 
-<button mat-raised-button color="primary" (click)="showText()">Enviar</button>
-<h1> {{content}}</h1>
---->
-<form (submit)="addPost(postForm)" #postForm= "ngForm">
-  <mat-form-field  appearance="fill">
-    <mat-label>Título</mat-label>
-    <input type="text" matInput ngModel title="ngModel" placeholder="Title" name ="title" required>
+<form (submit)="addPost(postForm)" #postForm="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input type="text" matInput ngModel title="ngModel" name="title" required />
+    <mat-error>{{ getErrorMessage() }}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Summary</mat-label>
-    <input type="text" matInput ngModel summary="summary" placeholder="Summary" name="summary" required>
+    <input type="text" matInput ngModel summary="ngModel" name="summary" />
   </mat-form-field>
-   <mat-form-field appearance="fill">
+
+  <mat-form-field appearance="fill">
     <mat-label>Content</mat-label>
-    <textarea type="text" ngModel="content" placeholder="Content"matInput  name="content"></textarea>
+    <textarea
+      matInput
+      ngModel
+      content="ngModel"
+      name="content"
+      required
+    ></textarea>
+    <mat-error>{{ getErrorMessage() }}</mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" >Guardar</button>
+
+  <button mat-raised-button color="primary">Guardar</button>
 </form>
-
-

@@ -11,6 +11,7 @@ import { PostService } from '../services/post.service';
 export class CreatePostComponent implements OnInit {
   content: string = 'Hola a todos';
   texto: string = '';
+  errorMessage = 'Este campo es requerido.';
 
   constructor(public postService: PostService) {}
 
@@ -22,9 +23,12 @@ export class CreatePostComponent implements OnInit {
 
   addPost(form: NgForm) {
     if (form.valid) {
-
       this.postService.addPost(form.value);
       form.resetForm();
     }
+  }
+
+  getErrorMessage() {
+    return this.errorMessage;
   }
 }
