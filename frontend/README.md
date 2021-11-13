@@ -1,6 +1,6 @@
 # Blogify
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
 ## Development server
 
@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Sprint 2
+
+[Pantallazos](https://drive.google.com/drive/folders/1_-Q-AdV3m4MNqUw1qEE6zyeSzwCgtupj?usp=sharing)
+
+![Diagrama de clases](https://lucid.app/publicSegments/view/dbfb2e7a-9ff5-4ef9-8b06-4634401b3d9f/image.png)

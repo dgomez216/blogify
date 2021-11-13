@@ -1,3 +1,7 @@
+// -----------------------------------------
+// | Este archivo ya no se esta utilizando |
+// -----------------------------------------
+
 // Importacion del modulo Express bajo el alias express
 const express = require("express");
 // Genera una nueva instancia de express
@@ -42,3 +46,6 @@ app.post("/api/posts", (req, res) => {
 // Se coloca a escuchar (ejecutar) el servidor web con el uso del método listen, el método listen recibe
 // dos parámetros, el puerto en el que va a escuchar el servidor y una función anónima con una ejecución de código
 // al momento de montar el servidor
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`);
+});
